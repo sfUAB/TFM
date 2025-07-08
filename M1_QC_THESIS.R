@@ -59,16 +59,12 @@ files_INMA <- list.files(path = "./INMA/results/phenols/model1", pattern = "PACE
 files_INMA #15 files, all total, leave out BPA
 
 #######
-files_LINA <- list.files(path = "./LINA/results/phenols/model1", pattern = "PACE_phthalates_LINA_EWAS_Model(A|B|C)_log_BPA_.*", full.names = TRUE)
-files_LINA # 3 files 
 
 files_NELA <- list.files(path = "./NELA/results/phenols/model1", pattern = "PACE_phthalates_NELA_EWAS_Model(A|B|C)_(ad.*)_(EPB|MPB|BP3|PPB|BPA)(_media)?_S24_.*", full.names = TRUE)
 files_NELA #15 files
 
-files <- c (files_GenR_0y, files_INMA, files_LINA, files_NELA)
-files #36 total files without INMA BPA
-
-
+files <- c (files_GenR_0y, files_INMA, files_NELA)
+files 
 
 
 # Result folder
@@ -80,7 +76,6 @@ prefixes <- c(
   'Model1A_INMA_BP3',  'Model1A_INMA_ETPA', 'Model1A_INMA_MEPA', 'Model1A_INMA_PRPA', 'Model1A_INMA_TCS',
   'Model1B_INMA_BP3',  'Model1B_INMA_ETPA', 'Model1B_INMA_MEPA', 'Model1B_INMA_PRPA', 'Model1B_INMA_TCS',
   'Model1C_INMA_BP3',  'Model1C_INMA_ETPA', 'Model1C_INMA_MEPA', 'Model1C_INMA_PRPA', 'Model1C_INMA_TCS',
-  'Model1A_LINA_BPA', 'Model1B_LINA_BPA', 'Model1C_LINA_BPA', 
   'Model1A_NELA_BP3', 'Model1A_NELA_ETPA', 'Model1A_NELA_MEPA', 'Model1A_NELA_PRPA', 'Model1A_NELA_BPA',
   'Model1B_NELA_BP3', 'Model1B_NELA_ETPA', 'Model1B_NELA_MEPA', 'Model1B_NELA_PRPA', 'Model1B_NELA_BPA',
   'Model1C_NELA_BP3', 'Model1C_NELA_ETPA', 'Model1C_NELA_MEPA', 'Model1C_NELA_PRPA', 'Model1C_NELA_BPA'
@@ -94,7 +89,6 @@ ethnic<-rep("GMAF1p", times = length(prefixes))
 # Array type, used : 
 artype <- c('450K', '450K', '450K', #GEnR
             '450K', '450K', '450K', '450K', '450K', '450K', '450K', '450K', '450K','450K', '450K', '450K', '450K', '450K', '450K', #INMA
-            '450K', '450K', '450K', #LINA
             'EPIC', 'EPIC', 'EPIC','EPIC', 'EPIC', 'EPIC','EPIC', 'EPIC', 'EPIC','EPIC', 'EPIC', 'EPIC','EPIC', 'EPIC', 'EPIC' #NELA
 )
 length(artype)
@@ -109,8 +103,6 @@ exclude <- c( 'control_probes',
               'MASK_typeINextBaseSwitch',
               'MASK_snp5_GMAF1p',
               'Unrel_450_EPIC_blood')
-
-
 
 N <- c(
   276, 276, 276, #GenR0y, changed already
@@ -133,15 +125,6 @@ n <- c(NA)
 
 colname_NforProbe <- 'N_for_probe'
 pcMissingSamples <- 0.9
-
-
-# Venn diagrams- keep 
-#venn_diagrams <- list(
-#c("PACE_phthalates_GenR_EWAS_ModelA", "GenRNext_EWAS_ModelA", "NYU_GenRNext_EWAS_ModelA"),
-# c("PACE_phthalates_GenR_EWAS_ModelB", "GenRNext_EWAS_ModelB", "NYU_GenRNext_EWAS_ModelB"),
-# c("PACE_phthalates_GenR_EWAS_ModelC", "GenRNext_EWAS_ModelC", "NYU_GenRNext_EWAS_ModelC")
-
-
 
 ########## ----------  END VARIABLES DEFINED BY USER  ----------  ##########
 
