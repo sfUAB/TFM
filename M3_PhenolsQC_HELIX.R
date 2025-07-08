@@ -43,17 +43,13 @@ library(ggplot2)
 
 ########## ----------  VARIABLES DEFINED BY USER  ----------  ##########
 
-
-
 # Set working directory to metaanalysis folder
 setwd("Z:/analyses/ATH_EWAS_phenols/db/M3_cross_sectional_chilhood_newimputation")
 setwd("/PROJECTES/HELIX_OMICS/analyses/ATH_EWAS_phenols/db/M3_cross_sectional_chilhood_newimputation")    #for mobaxterm
 
-
 files_HELIX <- list.files(path = "/PROJECTES/HELIX_OMICS/analyses/ATH_EWAS_phenols/db/M3_cross_sectional_chilhood_newimputation", pattern = "PACE_phenols_newimp_HELIX_EWAS_Model(A|B|C)_hs_(bpa|mepa)_c_[0-9]{8}\\.tsv$", full.names = TRUE)
 files_HELIX
-
-files <- files_HELIX #6 files 
+files <- files_HELIX 
 
 
 # Result folder
@@ -398,8 +394,6 @@ QC_sum_sorted_by_compound <- QC_sum_condensed[order(grepl("BPA$", QC_sum_condens
                                                     grepl("MEPA", QC_sum_condensed$prefixes),
                                                     QC_sum_condensed$prefixes),]
 View(QC_sum_sorted_by_compound)
-
-
 
 library(writexl)
 write_xlsx(QC_sum_sorted_by_compound, "QC_phenol_M3_excel_final.xlsx")
