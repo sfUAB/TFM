@@ -53,8 +53,7 @@ setwd("/PROJECTES/HELIX_OMICS/analyses/ATH_EWAS_phenols/db/M2_persistenteffects_
 files_HELIX <- list.files(path = "/PROJECTES/HELIX_OMICS/analyses/ATH_EWAS_phenols/db/M2_persistenteffects_newimputation", pattern = "PACE_phenols_newimp_HELIX_EWAS_Model(A|B|C)_hs_(bpa|prpa|trcs)_m_[0-9]{8}\\.tsv$", full.names = TRUE)
 files_HELIX
 
-files <- files_HELIX #3 files 
-
+files <- files_HELIX 
 
 # Result folder
 setwd("/PROJECTES/HELIX_OMICS/analyses/ATH_EWAS_phtalates/metaanalysis/") 
